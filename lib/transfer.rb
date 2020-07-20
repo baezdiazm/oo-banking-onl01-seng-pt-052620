@@ -44,7 +44,7 @@ class Transfer
   end
 
   def valid_trans
-    if @sender.valid? && @sender.balance > @amount && @status == "pending"
+    if self.valid? && @sender.balance > @amount && @status == "pending"
       true
     else
       false
