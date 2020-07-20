@@ -35,7 +35,7 @@ class Transfer
   def transfer
     @sender.balance -= @amount
     @receiver.balance += @amount
-    @tatus = "complete"
+    @status = "complete"
   end
 
   def reject
@@ -60,10 +60,10 @@ class Transfer
   end
 
   def reverse_transfer
-    if self.status == "complete"
+    if @status == "complete"
       @sender.balance += @amount
       @receiver.balance -= @amount
-      self.status = "reversed"
+      @status = "reversed"
     else
       self.reject
     end
